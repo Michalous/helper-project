@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil&display=swap');
+
+body {
+    background-color: aquamarine;
+}
+
+#jumbotron {
+    position: relative;
+    background: url('./assets/jumbotron.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Stardos Stencil', cursive !important;
+    color:  black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputField {
+    margin-top: 40px;
+    width: 70vw;
+    max-width: 700px;
+    height: 50px;
+    font-size: 24px;
+    padding-left: 60px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#inputFieldResults {
+    margin-bottom: 25px;
+    background-color: bisque;
+    border-radius: 20px;
+}
+
+.myGlass {
+    position: relative;
+    top: -40px;
+    left: -45%;
+    font-size: 24px;
+}
+
+.modal {
+    top: 40px;
+}
+
+.modal-footer {
+    height: 50px;
+}
+
+@media only screen and (max-width: 400px) {
+    #inputField {
+        font-size: 16px;
+    }
+
+    .myGlass {
+        left: -40%;
+        font-size: 16px;
+    }
+}
+
+.result:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+.card {
+    height: 400px;
+}
+
+button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#flag {
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+#facts_results, #earthquake_results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#history_btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+}
+
+.card {
+    background-color: wheat;
+}
+
+.myIcon {
+    display: block; 
+    margin: 20px auto 45px; 
+    font-size: 65px;
+}
+
+#map_result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* === Kinetic loader === */
+.kinetic {
+    position: relative;
+    height: 80px;
+    width: 80px;
+}
+
+.kinetic::after,
+.kinetic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 50px solid transparent;
+    border-bottom-color: #fff;
+    animation: rotateA 2s linear infinite 0.5s;
+}
+
+.kinetic::before {
+    transform: rotate(90deg);
+    animation: rotateB 2s linear infinite;
+}
+
+@keyframes rotateA {
+    0%,
+    25% {
+        transform: rotate(0deg);
+    }
+
+    50%,
+    75% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateB {
+    0%,
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50%,
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(450deg);
+    }
+}
+
+/* === countdown === */
+h4{
+    font-size: 20px;
+    margin: 5px;
+    text-transform: uppercase;
+}
+
+.counter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.counter.hide {
+    transform: translate(-50%, -50%) scale(0);
+    animation: hide 0.2s ease-out;
+}
+
+@keyframes hide {
+    0% {
+    transform: translate(-50%, -50%) scale(1);  
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+.final {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-align: center;
+}
+
+.final.show {
+    transform: translate(-50%, -50%) scale(1);
+    animation: show 0.2s ease-out;
+}
+
+@keyframes show {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.nums {
+    color: #3498db;
+    font-size: 50px;
+    position: relative;
+    overflow: hidden;
+    width: 250px;
+    height: 50px;
+}
+
+.nums span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(120deg);
+    transform-origin: bottom center;
+}
+
+.nums span.in {
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: goIn 0.5s ease-in-out;
+}
+
+.nums span.out {
+    animation: goOut 0.5s ease-in-out;
+}
+
+@keyframes goIn {
+    0% {
+        transform: translate(-50%, -50%) rotate(120deg);  
+    }
+
+    30% {
+        transform: translate(-50%, -50%) rotate(-20deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes goOut {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);  
+    }
+
+    60% {
+        transform: translate(-50%, -50%) rotate(20deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-120deg);
+    }
+}
