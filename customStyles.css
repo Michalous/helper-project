@@ -140,6 +140,14 @@ button {
     padding: 0;
 }
 
+#footer {
+    text-align: center;
+    height: 100px;
+    background-color: black;
+    padding-top: 20px;
+    color: aliceblue;
+}
+
 /* === Kinetic loader === */
 .kinetic {
     position: relative;
