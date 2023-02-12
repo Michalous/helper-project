@@ -198,11 +198,9 @@ function resetDOM() {
     nums[0].classList.add('in')
 }
 
-var myCoordinates = [51.508742,-0.120850]
-
 function myMap() {
     var mapProp= {
-      center:new google.maps.LatLng(myCoordinates[0], myCoordinates[1]),
+      center:new google.maps.LatLng(51.508742,-0.120850),
       zoom:5,
     };
     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
