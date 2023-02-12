@@ -159,6 +159,7 @@ function clickHistory() {
 
         fetchCountryInfo(count, coName, nam)
         fetchEarthquakeInfo(lat, lon, coName, nam)
+        displayMap(lat, lon)
     })
 }
 
@@ -198,13 +199,6 @@ function resetDOM() {
     nums[0].classList.add('in')
 }
 
-// function myMap() {
-//     var mapProp= {
-//       center:new google.maps.LatLng(51.508742,-0.120850),
-//       zoom:5,
-//     };
-//     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-// }
 
 function displayMap(lat, lon) {
    $('#map_result').empty()
