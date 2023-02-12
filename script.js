@@ -14,6 +14,8 @@ $(document).ready(function() {
         $('.modal').modal('show')
         resetDOM()
         runAnimation()
+        const myTimeout = setTimeout(scrollDown, 4300)
+        showRandomEntry()
     })
 
     $(function () {
@@ -97,6 +99,10 @@ function fetchCountryInfo(country, countryName, name) {
         .catch(err => console.error(err))
 }
 
+function scrollDown() {
+    document.getElementById('row').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+    $('.modal').modal('hide')
+}
 
 function showCountryData(response, countryName, name) {
     var flag = $(`<img id="flag" src="${response[0]['flags']['png']}" alt="flag">`)
@@ -116,6 +122,19 @@ function showEarthQuakeData(response, countryName, name) {
     var earthquake_magnitude = `<p>It had a magnitude of ${magnitude} and occured ${earhquake_location}</p>`
     $('#earthquake_results').append(earthquake_magnitude)
     console.log('hello', response)
+}
+
+function showRandomEntry() {
+    x = Math.floor(Math.random() * cities.length)
+    console.log(cities[x])
+    var lat = cities[x]['CapitalLatitude']
+    var lon = cities[x]['CapitalLongitude']
+    var capitalName = cities[x]['CapitalName']
+    var countryName = cities[x]['CountryName']
+    var countryCode = cities[x]['CountryCode']
+    fetchCountryInfo(countryCode, countryName, capitalName)
+    fetchEarthquakeInfo(lat, lon, countryName, capitalName)
+    displayMap(lat, lon)
 }
 
 // ========== localStorage ==========
