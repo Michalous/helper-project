@@ -216,4 +216,4 @@ function myMap() {
   });
 }
 
-window.initMap = initMap;
+window.initMap = myMap;
