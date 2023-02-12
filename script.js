@@ -62,6 +62,7 @@ $(document).ready(function() {
                 fetchCountryInfo(country, countryName, name)
                 saveToLocalStorage(locData[0], locData[1], name, countryName, country)
                 displayHistory()
+                displayMap(locData[0], locData[1])
             })
         
         })    
@@ -198,10 +199,16 @@ function resetDOM() {
     nums[0].classList.add('in')
 }
 
-function myMap() {
-    var mapProp= {
-      center:new google.maps.LatLng(51.508742,-0.120850),
-      zoom:5,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+// function myMap() {
+//     var mapProp= {
+//       center:new google.maps.LatLng(51.508742,-0.120850),
+//       zoom:5,
+//     };
+//     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+// }
+
+function displayMap(lat, lon) {
+   $('#map_result').empty()
+   var mapToDisplay =  `<iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyB3QTuugkMPxf0T9jl4um4NovYGsnTO2lM&center=${lat},${lon}&zoom=6" allowfullscreen></iframe>`
+   $('#map_result').append(mapToDisplay)
 }
