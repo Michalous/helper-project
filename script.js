@@ -49,7 +49,6 @@ $(document).ready(function() {
                 console.log(name)
                 console.log(country)
                 $('#inputFieldResults').empty()
-                myMap(locData[0], locData[1])
                 for (var i = 0; i < listOfCountryObjects.length; i++) {
                     if (listOfCountryObjects[i]['ISO2'] == country) {
                         var slug = listOfCountryObjects[i]['Slug']
