@@ -198,10 +198,22 @@ function resetDOM() {
     nums[0].classList.add('in')
 }
 
+// function myMap() {
+//     var mapProp= {
+//       center:new google.maps.LatLng(51.508742,-0.120850),
+//       zoom:5,
+//     };
+//     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+// }
+
+let map;
+let coor = [-34.397, 150.644]
+
 function myMap() {
-    var mapProp= {
-      center:new google.maps.LatLng(51.508742,-0.120850),
-      zoom:5,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: coor[0], lng: coor[1] },
+    zoom: 8,
+  });
 }
+
+window.initMap = initMap;
