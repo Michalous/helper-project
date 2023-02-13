@@ -121,10 +121,6 @@ button {
     transition-duration: 0.7s;
 }
 
-#history_searches {
-    overflow: hidden;
-}
-
 .card {
     background-color: wheat;
 }
