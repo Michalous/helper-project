@@ -5,6 +5,8 @@ var API_key = '45c2707f89d16318fbaddd18663434b4'
 $(document).ready(function() {
     
     displayHistory()
+    $('#table').hide()
+
     $('#history_btn').click(function() {
         localStorage.clear()
         displayHistory()
@@ -121,6 +123,7 @@ function showEarthQuakeData(response, countryName, name) {
     var earhquake_location = text_string.slice(8, text_string.length)
     var earthquake_magnitude = `<p>It had a magnitude of ${magnitude} and occured ${earhquake_location}</p>`
     $('#earthquake_results').append(earthquake_magnitude)
+    $('#table').show()
     console.log('hello', response)
 }
 

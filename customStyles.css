@@ -74,7 +74,9 @@ body {
 
 .card {
     height: 400px;
+    overflow: scroll;
 }
+
 
 button {
     margin-left: 10px;
@@ -91,6 +93,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: -20px;
 }
 
 .history {
